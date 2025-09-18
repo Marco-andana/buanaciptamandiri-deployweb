@@ -1,0 +1,85 @@
+@import "tailwindcss";
+
+* {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+/* src/index.css */
+
+/* ... (kode css Anda yang lain) ... */
+
+/* Kustomisasi untuk Tombol Navigasi dan Pagination Swiper */
+.mySwiper .swiper-button-next,
+.mySwiper .swiper-button-prev {
+    color: #ef4444 !important; /* Tailwind red-500 */
+}
+
+.mySwiper .swiper-pagination-bullet-active {
+    background-color: #ef4444 !important; /* Tailwind red-500 */
+}
+
+
+.slider {
+    height: 250px;
+    margin: auto;
+    position: relative;
+    width: 15%;
+    display: grid;
+    place-items: center;
+    overflow: hidden;
+    right: 1000px;
+  }
+
+  .slide-track {
+    display: flex;
+    width: calc(200px * 13);
+    animation: scroll 20s linear infinite;
+  }
+  
+  .slide {
+    height: 100px;
+    width: 100px;
+    display: flex;
+    align-items: center;
+    padding: 5px;
+    margin-right: 13px;
+  }
+
+  @keyframes scroll {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(calc(-200px * 13));
+    }
+  }
+
+.card {
+  @apply w-72 cursor-pointer rounded-md bg-gradient-to-t from-white/20 h-44 text-center px-3 py-7
+}
+
+.logo {
+  @apply text-5xl mt-2 min-w-[5rem] max-w-[5rem] mx-auto min-h-[5rem] rounded-full bg-red-200 text-red-600 grid place-items-center
+}
+
+@theme {
+  --color-feature-bg: rgba(40, 111, 180, 0.07)
+}
+
+@media (max-width: 768px) {
+  .testimonial-container {
+    /* Mengubah tumpukan dari berdampingan menjadi ke bawah */
+    flex-direction: column;
+
+    /* Memusatkan kartu testimoni secara horizontal */
+    align-items: center;
+  }
+
+  .testimonial-card {
+    /* Atur lebar kartu agar tidak terlalu mepet ke tepi layar.
+      Anda juga bisa menggunakan max-width, misal: max-width: 400px;
+    */
+    width: 90%;
+  }
+}

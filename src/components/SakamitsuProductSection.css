@@ -1,0 +1,78 @@
+/* src/components/SakamitsuProductSection.css */
+.sakamitsu-product-section {
+  padding: 40px 20px; /* Jarak atas-bawah dan kiri-kanan */
+  text-align: center;
+  background-color: #f9f9f9; /* Warna latar belakang */
+}
+
+.sakamitsu-product-section .section-title {
+  font-size: 2.5em; /* Ukuran judul "Produk Kami" */
+  margin-bottom: 40px;
+  color: #333;
+}
+
+.sakamitsu-layout {
+  display: flex; /* Menggunakan Flexbox */
+  justify-content: center; /* Pusatkan item secara horizontal */
+  align-items: flex-start; /* Sejajarkan item ke atas */
+  gap: 30px; /* Jarak antar kolom */
+  flex-wrap: wrap; /* Izinkan item untuk wrapping di layar kecil */
+  max-width: 1200px; /* Lebar maksimal konten */
+  margin: 0 auto; /* Pusatkan layout di tengah halaman */
+}
+
+.sakamitsu-left-column,
+.sakamitsu-right-column,
+.sakamitsu-center-column {
+  display: flex;
+  flex-direction: column; /* Item di dalam kolom diatur secara vertikal */
+  gap: 20px; /* Jarak antar poster di dalam kolom */
+  flex: 1; /* Memberikan flexibilitas pada kolom */
+  min-width: 250px; /* Lebar minimum untuk kolom */
+  max-width: 350px; /* Lebar maksimum untuk kolom */
+}
+
+/* Kolom tengah bisa dibuat lebih dominan */
+.sakamitsu-center-column {
+    flex: 1.5; /* Agak lebih lebar dari kolom lain */
+    align-items: center; /* Pusatkan item di tengah */
+    justify-content: center;
+}
+
+.sakamitsu-poster {
+  background-color: #fff;
+  border-radius: 8px;
+  overflow: hidden; /* Pastikan gambar tidak keluar dari border radius */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.sakamitsu-poster:hover {
+  transform: translateY(-5px); /* Efek hover sederhana */
+}
+
+.sakamitsu-poster img {
+  max-width: 100%;
+  height: auto;
+  display: block; /* Hapus spasi di bawah gambar */
+}
+
+.sakamitsu-main-logo {
+  max-width: 100%; /* Sesuaikan ukuran logo SAKAMITSU */
+  height: auto;
+  padding: 20px; /* Berikan sedikit padding */
+}
+
+/* Media Queries untuk Responsif */
+@media (max-width: 768px) {
+  .sakamitsu-layout {
+    flex-direction: column; /* Tumpuk kolom secara vertikal di layar kecil */
+    align-items: center; /* Pusatkan item */
+  }
+
+  .sakamitsu-left-column,
+  .sakamitsu-right-column,
+  .sakamitsu-center-column {
+    max-width: 100%; /* Ambil lebar penuh */
+  }
+}
